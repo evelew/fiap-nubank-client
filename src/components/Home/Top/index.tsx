@@ -12,7 +12,7 @@ import "./styles.scss";
 const HomeTop: React.FC = () => {
   return (
     <div className="home__top">
-      <IonHeader collapse="condense" className="home__top-header ion-no-border">
+      <IonHeader className="home__top-header ion-no-border">
         <IonToolbar color="primary">
           <IonButton slot="start" fill="clear">
             <IonIcon icon={close} color="secondary"></IonIcon>
