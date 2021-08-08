@@ -1,0 +1,28 @@
+.home__accounts {
+  .home__accounts-item {
+    --border-width: 0;
+    border-bottom: 1px solid #c4c4c4;
+    padding: 20px 0;
+
+    .name {
+      font-size: 14px;
+      line-height: 18px;
+
+      strong {
+        display: inline-block;
+        margin-bottom: 4px;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .value {
+      font-size: 14px;
+      color: #979696;
+      text-align: right;
+      width: 200px;
+    }
+  }
+}
