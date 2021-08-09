@@ -4,13 +4,15 @@
   justify-content: space-around;
   padding: 16px 0;
 
-  button {
+  button,
+  a {
     align-items: center;
     background-color: transparent;
     display: flex;
     flex-flow: column;
     font-size: 14px;
     padding: 4px 18px;
+    text-decoration: none;
 
     ion-icon {
       color: #820ad1;
