@@ -3,7 +3,8 @@ import { IonApp, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
 import Home from "./pages/Home";
-import NewWallet from "./pages/NewWallet";
+import NewWalletInit from "./pages/NewWallet/Init";
+import NewWalletSetName from "./pages/NewWallet/SetName";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -22,6 +23,7 @@ import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
 
 /* Theme variables */
+import "./theme/global.scss";
 import "./theme/variables.css";
 
 const App: React.FC = () => (
@@ -32,7 +34,10 @@ const App: React.FC = () => (
           <Home />
         </Route>
         <Route exact path="/criar-nova-carteira">
-          <NewWallet />
+          <NewWalletInit />
+        </Route>
+        <Route exact path="/criar-nova-carteira/name">
+          <NewWalletSetName />
         </Route>
         {/* <Route exact path="/">
           <Redirect to="/home" />

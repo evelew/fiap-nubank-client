@@ -2,11 +2,9 @@ import { Link } from "react-router-dom";
 import { IonIcon } from "@ionic/react";
 import { walletOutline } from "ionicons/icons";
 
-import "./styles.scss";
-
-const Accounts: React.FC = () => {
+const Footer: React.FC = () => {
   return (
-    <footer className="home__footer">
+    <footer className="g-bottom-button">
       <button>
         <IonIcon icon={walletOutline} />
         <span>Guardar</span>
@@ -19,4 +17,4 @@ const Accounts: React.FC = () => {
   );
 };
 
-export default Accounts;
+export default Footer;

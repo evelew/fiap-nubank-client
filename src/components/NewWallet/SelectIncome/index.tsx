@@ -5,9 +5,9 @@ import {
   IonLabel,
   IonRadio,
   IonIcon,
-  IonButton,
 } from "@ionic/react";
 import { cashOutline, calendarOutline } from "ionicons/icons";
+import { Link } from "react-router-dom";
 
 import "./styles.scss";
 
@@ -46,8 +46,8 @@ const SelectIncome: React.FC = () => {
         </IonRadioGroup>
       </IonList>
 
-      <div className="select-income__button">
-        <button>Confirmar</button>
+      <div className="g-bottom-button">
+        <Link to="/criar-nova-carteira/name">Confirmar</Link>
       </div>
     </div>
   );
