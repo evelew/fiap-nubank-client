@@ -9,11 +9,14 @@ import {
 import { cashOutline, calendarOutline } from "ionicons/icons";
 import { Link } from "react-router-dom";
 
+import Header from "./../Header";
+
 import "./styles.scss";
 
 const SelectIncome: React.FC = () => {
   return (
     <div className="select-income">
+      <Header />
       <p>Quando você quer ter esse dinheiro disponível?</p>
 
       <IonList lines="none">
