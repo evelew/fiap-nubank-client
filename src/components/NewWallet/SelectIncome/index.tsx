@@ -19,7 +19,7 @@ const SelectIncome: React.FC = () => {
       <IonList lines="none">
         <IonRadioGroup>
           <IonItem className="select-income__item">
-            <IonIcon icon={cashOutline} />
+            <IonIcon icon={cashOutline} slot="start" />
 
             <div className="name">
               <IonLabel>
@@ -28,11 +28,11 @@ const SelectIncome: React.FC = () => {
               </IonLabel>
             </div>
 
-            <IonRadio value="cdi-100" />
+            <IonRadio value="cdi-100" slot="end" />
           </IonItem>
 
           <IonItem className="select-income__item">
-            <IonIcon icon={calendarOutline} />
+            <IonIcon icon={calendarOutline} slot="start" />
 
             <div className="name">
               <IonLabel>
@@ -41,7 +41,7 @@ const SelectIncome: React.FC = () => {
               </IonLabel>
             </div>
 
-            <IonRadio value="cdi-102" />
+            <IonRadio value="cdi-102" slot="end" />
           </IonItem>
         </IonRadioGroup>
       </IonList>
