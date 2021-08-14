@@ -1,12 +1,12 @@
 import { IonContent, IonPage } from "@ionic/react";
 
-import WalletName from "./../../components/NewWallet/WalletName";
+import SelectIncome from "./../../components/NewWallet/SelectIncome";
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <IonPage>
       <IonContent fullscreen>
-        <WalletName />
+        <SelectIncome />
       </IonContent>
     </IonPage>
   );

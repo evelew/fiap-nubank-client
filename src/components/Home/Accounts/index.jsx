@@ -2,7 +2,7 @@ import { IonList, IonItem } from "@ionic/react";
 
 import "./styles.scss";
 
-const Accounts: React.FC = () => {
+const Accounts = () => {
   return (
     <div className="home__accounts">
       <IonList lines="full">

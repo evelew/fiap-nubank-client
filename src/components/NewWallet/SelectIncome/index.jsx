@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
   IonList,
   IonItem,
@@ -9,18 +10,30 @@ import {
 import { cashOutline, calendarOutline } from "ionicons/icons";
 import { Link } from "react-router-dom";
 
+import AppContext from "./../../../context";
+
 import Header from "./../Header";
 
 import "./styles.scss";
 
-const SelectIncome: React.FC = () => {
+const SelectIncome = () => {
+  const { setSelectedCDI } = useContext(AppContext);
+
+  const onRadioChange = (event) => {
+    const selectedCDI = event.detail.value;
+    setSelectedCDI(selectedCDI);
+  };
+
   return (
     <div className="select-income">
       <Header />
-      <p>Quando você quer ter esse dinheiro disponível?</p>
+
+      <p className="select-income__title title">
+        Quando você quer ter esse dinheiro disponível?
+      </p>
 
       <IonList lines="none">
-        <IonRadioGroup>
+        <IonRadioGroup onIonChange={onRadioChange}>
           <IonItem className="select-income__item">
             <IonIcon icon={cashOutline} slot="start" />
 

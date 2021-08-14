@@ -2,6 +2,8 @@ import { Route } from "react-router-dom";
 import { IonApp, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
+import { AppContextProvider } from "./context";
+
 import Home from "./pages/Home";
 import NewWalletInit from "./pages/NewWallet/Init";
 import NewWalletSetName from "./pages/NewWallet/SetName";
@@ -26,25 +28,28 @@ import "@ionic/react/css/display.css";
 import "./theme/global.scss";
 import "./theme/variables.css";
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/criar-nova-carteira">
-          <NewWalletInit />
-        </Route>
-        <Route exact path="/criar-nova-carteira/name">
-          <NewWalletSetName />
-        </Route>
-        {/* <Route exact path="/">
+const App = () => (
+  <AppContextProvider>
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/criar-nova-carteira">
+            <NewWalletInit />
+          </Route>
+          <Route exact path="/criar-nova-carteira/name">
+            <NewWalletSetName />
+          </Route>
+          {/* <Route exact path="/">
           <Redirect to="/home" />
         </Route> */}
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  </AppContextProvider>
+
 );
 
 export default App;

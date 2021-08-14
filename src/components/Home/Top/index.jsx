@@ -9,7 +9,7 @@ import { close, helpCircleOutline } from "ionicons/icons";
 
 import "./styles.scss";
 
-const HomeTop: React.FC = () => {
+const HomeTop = () => {
   return (
     <div className="home__top">
       <IonHeader className="home__top-header ion-no-border">

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { IonIcon } from "@ionic/react";
 import { walletOutline } from "ionicons/icons";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="g-bottom-button">
       <button>

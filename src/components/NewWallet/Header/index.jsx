@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import "./styles.scss";
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <div className="new-wallet">
       <IonHeader className="new-wallet-header ion-no-border">
