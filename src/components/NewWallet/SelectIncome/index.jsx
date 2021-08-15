@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   IonList,
   IonItem,
@@ -7,10 +7,11 @@ import {
   IonRadio,
   IonIcon,
 } from "@ionic/react";
-import { cashOutline, calendarOutline } from "ionicons/icons";
+import { calendarOutline } from "ionicons/icons";
 import { Link } from "react-router-dom";
 
 import AppContext from "./../../../context";
+import httpRequest from "../../../services/http-request";
 
 import Header from "./../Header";
 
@@ -18,6 +19,24 @@ import "./styles.scss";
 
 const SelectIncome = () => {
   const { setSelectedCDI } = useContext(AppContext);
+  const [incomes, setIncomes] = useState([]);
+
+  useEffect(() => {
+    getIncomes();
+  }, []);
+
+  const getIncomes = () => {
+    httpRequest({
+      port: 3001,
+      method: "GET",
+      endpoint: "income/get-all",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setIncomes(data);
+      })
+      .catch((err) => console.error(err));
+  };
 
   const onRadioChange = (event) => {
     const selectedCDI = event.detail.value;
@@ -34,31 +53,20 @@ const SelectIncome = () => {
 
       <IonList lines="none">
         <IonRadioGroup onIonChange={onRadioChange}>
-          <IonItem className="select-income__item">
-            <IonIcon icon={cashOutline} slot="start" />
+          {incomes.map((income) => (
+            <IonItem className="select-income__item" key={income._id}>
+              <IonIcon icon={calendarOutline} slot="start" />
 
-            <div className="name">
-              <IonLabel>
-                <p>Qualquer momento</p>
-                <small>Rendendo 100% do CDI</small>
-              </IonLabel>
-            </div>
+              <div className="name">
+                <IonLabel>
+                  <p>Disponíve em {income?.due_date}</p>
+                  <small>{income?.name}</small>
+                </IonLabel>
+              </div>
 
-            <IonRadio value="100" slot="end" />
-          </IonItem>
-
-          <IonItem className="select-income__item">
-            <IonIcon icon={calendarOutline} slot="start" />
-
-            <div className="name">
-              <IonLabel>
-                <p>Qualquer momento</p>
-                <small>Rendendo 102% do CDI</small>
-              </IonLabel>
-            </div>
-
-            <IonRadio value="102" slot="end" />
-          </IonItem>
+              <IonRadio value={income?._id} slot="end" />
+            </IonItem>
+          ))}
         </IonRadioGroup>
       </IonList>
 
