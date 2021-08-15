@@ -44,7 +44,7 @@ const SelectIncome = () => {
               </IonLabel>
             </div>
 
-            <IonRadio value="cdi-100" slot="end" />
+            <IonRadio value="100" slot="end" />
           </IonItem>
 
           <IonItem className="select-income__item">
@@ -57,13 +57,13 @@ const SelectIncome = () => {
               </IonLabel>
             </div>
 
-            <IonRadio value="cdi-102" slot="end" />
+            <IonRadio value="102" slot="end" />
           </IonItem>
         </IonRadioGroup>
       </IonList>
 
       <div className="g-bottom-button">
-        <Link to="/criar-nova-carteira/name">Confirmar</Link>
+        <Link to="/criar-nova-carteira/valor">Confirmar</Link>
       </div>
     </div>
   );

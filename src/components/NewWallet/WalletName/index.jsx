@@ -1,16 +1,18 @@
 import { useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
 import { IonIcon } from "@ionic/react";
 import { walletOutline } from "ionicons/icons";
 
 import AppContext from "./../../../context";
+import httpRequest from "../../../services/http-request";
 
 import Header from "./../Header";
 
 import "./styles.scss";
 
-const SelectIncome = () => {
-  const { setNewWalletName } = useContext(AppContext);
+const WalletName = () => {
+  const history = useHistory()
+  const { setNewWalletName, newWalletName, newWalletValue, selectedCDI } = useContext(AppContext);
 
   useEffect(() => {
     setTimeout(() => {
@@ -23,23 +25,42 @@ const SelectIncome = () => {
     setNewWalletName(name)
   }
 
+  const callRequest = () => {
+    httpRequest({
+      method: 'POST',
+      endpoint: 'wallet/create-new',
+      data: {
+        name: newWalletName,
+        cdi: parseInt(selectedCDI),
+        value: newWalletValue
+      },
+    }).then(() => {
+      history.push('/')
+    }).catch(err => console.error({ err }))
+  }
+
+  const createNewWallet = () => {
+    onChange()
+    callRequest()
+  }
+
   return (
     <div className="wallet-name">
       <Header />
 
       <div className="wallet-name__top">
         <p className="title">Qual o nome do novo porquinho?</p>
-        <input onChange={onChange} />
+        <input />
       </div>
 
       <footer className="g-bottom-button">
-        <Link to="/">
+        <button onClick={createNewWallet}>
           <IonIcon icon={walletOutline} />
           <span>Confirmar</span>
-        </Link>
+        </button>
       </footer>
     </div>
   );
 };
 
-export default SelectIncome;
+export default WalletName;

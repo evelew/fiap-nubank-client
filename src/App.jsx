@@ -7,6 +7,7 @@ import { AppContextProvider } from "./context";
 import Home from "./pages/Home";
 import NewWalletInit from "./pages/NewWallet/Init";
 import NewWalletSetName from "./pages/NewWallet/SetName";
+import NewWalletSetValue from "./pages/NewWallet/SetValue";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -38,6 +39,9 @@ const App = () => (
           </Route>
           <Route exact path="/criar-nova-carteira">
             <NewWalletInit />
+          </Route>
+          <Route exact path="/criar-nova-carteira/valor">
+            <NewWalletSetValue />
           </Route>
           <Route exact path="/criar-nova-carteira/name">
             <NewWalletSetName />
