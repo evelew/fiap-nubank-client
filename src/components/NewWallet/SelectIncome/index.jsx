@@ -27,7 +27,6 @@ const SelectIncome = () => {
 
   const getIncomes = () => {
     httpRequest({
-      port: 3001,
       method: "GET",
       endpoint: "income/get-all",
     })

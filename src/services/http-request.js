@@ -1,4 +1,4 @@
-const httpRequest = ({ port = 3000, endpoint, method, data }) => {
+const httpRequest = ({ port = 3005, endpoint, method, data }) => {
   const url = new URL(`http://localhost:${port}/${endpoint}`);
 
   return fetch(url, {
