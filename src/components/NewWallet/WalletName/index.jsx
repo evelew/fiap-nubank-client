@@ -6,7 +6,7 @@ import { walletOutline } from "ionicons/icons";
 import AppContext from "./../../../context";
 import httpRequest from "../../../services/http-request";
 
-import Header from "./../Header";
+import Header from "../../Header";
 
 import "./styles.scss";
 

@@ -3,14 +3,14 @@ import { IonIcon } from "@ionic/react";
 import { walletOutline } from "ionicons/icons";
 import { Link } from "react-router-dom";
 
-import AppContext from "./../../../context";
+import UpdateWalletContext from "./../../../context/update-wallet";
 
-import Header from "../../Header";
+import Header from "./../../Header";
 
 import "./styles.scss";
 
 const WalletValue = () => {
-  const { newWalletValue, setNewWalletValue } = useContext(AppContext);
+  const { amount, setAmount } = useContext(UpdateWalletContext);
 
   useEffect(() => {
     setTimeout(() => {
@@ -19,25 +19,25 @@ const WalletValue = () => {
   }, []);
 
   const onChange = () => {
-    const value = document.querySelector(".wallet-value__input").value;
-    setNewWalletValue(value);
+    const value = document.querySelector(".update-wallet__amount-input").value;
+    setAmount(value);
   };
 
   return (
-    <div className="wallet-value">
+    <div className="update-wallet">
       <Header />
 
-      <div className="wallet-value__top">
-        <p className="title">Qual o valor que quer guardar?</p>
+      <div className="update-wallet__amount-top">
+        <p className="title">Qual valor você quer guardar?</p>
         <input
-          className="wallet-value__input"
-          value={newWalletValue}
+          className="update-wallet__amount-input"
+          value={amount}
           onChange={onChange}
         />
       </div>
 
       <footer className="g-bottom-button">
-        <Link to="/criar-nova-carteira/name">
+        <Link to="/guardar-dinheiro/carteira">
           <IonIcon icon={walletOutline} />
           <span>Confirmar</span>
         </Link>

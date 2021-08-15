@@ -1,0 +1,19 @@
+.select-wallet {
+  padding-bottom: 80px;
+
+  .select-wallet__top {
+    padding: 0 20px;
+  }
+
+  .select-wallet__item {
+    padding: 10px 0;
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+    caret-color: #820ad1;
+    font-size: 22px;
+    outline: transparent;
+  }
+}

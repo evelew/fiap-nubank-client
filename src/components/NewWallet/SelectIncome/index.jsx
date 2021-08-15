@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import AppContext from "./../../../context";
 import httpRequest from "../../../services/http-request";
 
-import Header from "./../Header";
+import Header from "../../Header";
 
 import "./styles.scss";
 
