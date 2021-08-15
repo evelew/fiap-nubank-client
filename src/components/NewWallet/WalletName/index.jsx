@@ -32,7 +32,7 @@ const WalletName = () => {
       endpoint: "wallet/create-new",
       data: {
         name: newWalletName,
-        cdi: parseInt(selectedCDI),
+        cdi: selectedCDI,
         value: newWalletValue,
       },
     })
