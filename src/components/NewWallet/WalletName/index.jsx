@@ -1,6 +1,6 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { useHistory } from "react-router";
-import { IonIcon } from "@ionic/react";
+import { IonIcon, IonSpinner } from "@ionic/react";
 import { walletOutline } from "ionicons/icons";
 
 import AppContext from "./../../../context";
@@ -14,6 +14,7 @@ const WalletName = () => {
   const history = useHistory();
   const { setNewWalletName, newWalletName, newWalletValue, selectedCDI } =
     useContext(AppContext);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,6 +28,8 @@ const WalletName = () => {
   };
 
   const createNewWallet = () => {
+    setIsLoading(true);
+
     httpRequest({
       method: "POST",
       endpoint: "wallet/create-new",
@@ -39,7 +42,10 @@ const WalletName = () => {
       .then(() => {
         history.push("/");
       })
-      .catch((err) => console.error({ err }));
+      .catch((err) => console.error({ err }))
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -56,10 +62,14 @@ const WalletName = () => {
       </div>
 
       <footer className="g-bottom-button">
-        <button onClick={createNewWallet}>
-          <IonIcon icon={walletOutline} />
-          <span>Confirmar</span>
-        </button>
+        {isLoading ? (
+          <IonSpinner name="crescent" />
+        ) : (
+          <button onClick={createNewWallet}>
+            <IonIcon icon={walletOutline} />
+            <span>Confirmar</span>
+          </button>
+        )}
       </footer>
     </div>
   );
