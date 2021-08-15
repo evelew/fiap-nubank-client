@@ -12,8 +12,13 @@ import "./styles.scss";
 
 const WalletName = () => {
   const history = useHistory();
-  const { setNewWalletName, newWalletName, newWalletValue, selectedCDI } =
-    useContext(CreateWalletContext);
+  const {
+    setNewWalletName,
+    newWalletName,
+    newWalletValue,
+    selectedCDI,
+    clearStore,
+  } = useContext(CreateWalletContext);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -40,6 +45,7 @@ const WalletName = () => {
       },
     })
       .then(() => {
+        clearStore();
         history.push("/");
       })
       .catch((err) => console.error({ err }))

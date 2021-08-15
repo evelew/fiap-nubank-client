@@ -22,7 +22,8 @@ import "./styles.scss";
 
 const Wallet = () => {
   const history = useHistory();
-  const { setWallet, amount, wallet } = useContext(UpdateWalletContext);
+  const { setWallet, amount, wallet, clearStore } =
+    useContext(UpdateWalletContext);
   const [wallets, setWallets] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -59,6 +60,7 @@ const Wallet = () => {
       },
     })
       .then(() => {
+        clearStore();
         history.push("/");
       })
       .catch((err) => console.error({ err }))
@@ -77,7 +79,7 @@ const Wallet = () => {
         </p>
 
         <IonList lines="none">
-          <IonRadioGroup onIonChange={onRadioChange}>
+          <IonRadioGroup onIonChange={onRadioChange} value={wallet}>
             {wallets.map((wallet) => (
               <IonItem className="select-wallet__item" key={wallet._id}>
                 <div className="name">

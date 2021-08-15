@@ -18,7 +18,7 @@ import Header from "../../Header";
 import "./styles.scss";
 
 const SelectIncome = () => {
-  const { setSelectedCDI } = useContext(CreateWalletContext);
+  const { setSelectedCDI, selectedCDI } = useContext(CreateWalletContext);
   const [incomes, setIncomes] = useState([]);
 
   useEffect(() => {
@@ -51,7 +51,7 @@ const SelectIncome = () => {
       </p>
 
       <IonList lines="none">
-        <IonRadioGroup onIonChange={onRadioChange}>
+        <IonRadioGroup onIonChange={onRadioChange} value={selectedCDI}>
           {incomes.map((income) => (
             <IonItem className="select-income__item" key={income._id}>
               <IonIcon icon={calendarOutline} slot="start" />

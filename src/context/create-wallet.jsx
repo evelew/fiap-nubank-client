@@ -14,7 +14,7 @@ const CreateWallet = createContext(defaultValues);
 const CreateWalletProvider = ({ children }) => {
   const [selectedCDI, setSelectedCDI] = useState("");
   const [newWalletName, setNewWalletName] = useState("");
-  const [newWalletValue, setNewWalletValue] = useState(0);
+  const [newWalletValue, setNewWalletValue] = useState("");
 
   return (
     <CreateWallet.Provider
@@ -30,6 +30,11 @@ const CreateWalletProvider = ({ children }) => {
         },
         setNewWalletValue: (value) => {
           setNewWalletValue(value);
+        },
+        clearStore: () => {
+          setSelectedCDI("");
+          setNewWalletName("");
+          setNewWalletValue("");
         },
       }}
     >

@@ -24,6 +24,10 @@ const UpdateWalletContextProvider = ({ children }) => {
         setWallet: (value) => {
           setWallet(value);
         },
+        clearStore: () => {
+          setAmount("");
+          setWallet("");
+        },
       }}
     >
       {children}

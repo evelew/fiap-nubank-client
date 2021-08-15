@@ -24,7 +24,8 @@ const Home = () => {
       .then((data) => {
         const values = data.map((wallet) => wallet?.value);
         const totalValue = values.reduce(
-          (acc, currentValue) => (acc += currentValue)
+          (acc, currentValue) => (acc += currentValue),
+          0
         );
 
         setWallets(data);
