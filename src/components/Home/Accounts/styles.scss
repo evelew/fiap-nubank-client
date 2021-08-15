@@ -1,9 +1,15 @@
 .home__accounts {
   min-height: calc(100vh - 183px - 83px);
+  padding-bottom: 80px;
+
   .home__accounts-item {
     --border-width: 0;
     border-bottom: 1px solid #c4c4c4;
     padding: 20px 0;
+
+    &:last-of-type {
+      border: none;
+    }
 
     .name {
       font-size: 14px;

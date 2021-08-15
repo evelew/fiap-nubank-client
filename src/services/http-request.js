@@ -3,7 +3,6 @@ const httpRequest = ({ endpoint, method, data }) => {
 
   return fetch(url, {
     method,
-    // mode: 'no-cors',
     headers: {
       "Content-Type": "application/json",
     },
