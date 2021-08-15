@@ -2,7 +2,7 @@ import { Route } from "react-router-dom";
 import { IonApp, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
-import { AppContextProvider } from "./context";
+import { CreateWalletProvider } from "./context/create-wallet";
 import { UpdateWalletContextProvider } from "./context/update-wallet";
 
 import Home from "./pages/Home";
@@ -33,7 +33,7 @@ import "./theme/global.scss";
 import "./theme/variables.css";
 
 const App = () => (
-  <AppContextProvider>
+  <CreateWalletProvider>
     <UpdateWalletContextProvider>
       <IonApp>
         <IonReactRouter>
@@ -60,7 +60,7 @@ const App = () => (
         </IonReactRouter>
       </IonApp>
     </UpdateWalletContextProvider>
-  </AppContextProvider>
+  </CreateWalletProvider>
 );
 
 export default App;

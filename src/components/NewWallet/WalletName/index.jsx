@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import { IonIcon, IonSpinner } from "@ionic/react";
 import { walletOutline } from "ionicons/icons";
 
-import AppContext from "./../../../context";
+import CreateWalletContext from "./../../../context/create-wallet";
 import httpRequest from "../../../services/http-request";
 
 import Header from "../../Header";
@@ -13,7 +13,7 @@ import "./styles.scss";
 const WalletName = () => {
   const history = useHistory();
   const { setNewWalletName, newWalletName, newWalletValue, selectedCDI } =
-    useContext(AppContext);
+    useContext(CreateWalletContext);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {

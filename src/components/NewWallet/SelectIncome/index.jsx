@@ -10,7 +10,7 @@ import {
 import { calendarOutline } from "ionicons/icons";
 import { Link } from "react-router-dom";
 
-import AppContext from "./../../../context";
+import CreateWalletContext from "./../../../context/create-wallet";
 import httpRequest from "../../../services/http-request";
 
 import Header from "../../Header";
@@ -18,7 +18,7 @@ import Header from "../../Header";
 import "./styles.scss";
 
 const SelectIncome = () => {
-  const { setSelectedCDI } = useContext(AppContext);
+  const { setSelectedCDI } = useContext(CreateWalletContext);
   const [incomes, setIncomes] = useState([]);
 
   useEffect(() => {

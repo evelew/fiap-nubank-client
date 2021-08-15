@@ -3,14 +3,14 @@ import { IonIcon } from "@ionic/react";
 import { walletOutline } from "ionicons/icons";
 import { Link } from "react-router-dom";
 
-import AppContext from "./../../../context";
+import CreateWalletContext from "./../../../context/create-wallet";
 
 import Header from "../../Header";
 
 import "./styles.scss";
 
 const WalletValue = () => {
-  const { newWalletValue, setNewWalletValue } = useContext(AppContext);
+  const { newWalletValue, setNewWalletValue } = useContext(CreateWalletContext);
 
   useEffect(() => {
     setTimeout(() => {
