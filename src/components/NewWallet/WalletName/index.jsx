@@ -11,8 +11,9 @@ import Header from "./../Header";
 import "./styles.scss";
 
 const WalletName = () => {
-  const history = useHistory()
-  const { setNewWalletName, newWalletName, newWalletValue, selectedCDI } = useContext(AppContext);
+  const history = useHistory();
+  const { setNewWalletName, newWalletName, newWalletValue, selectedCDI } =
+    useContext(AppContext);
 
   useEffect(() => {
     setTimeout(() => {
@@ -21,28 +22,25 @@ const WalletName = () => {
   }, []);
 
   const onChange = () => {
-    const name = document.querySelector("input").value
-    setNewWalletName(name)
-  }
+    const name = document.querySelector(".wallet-name__input")?.value;
+    setNewWalletName(name);
+  };
 
-  const callRequest = () => {
+  const createNewWallet = () => {
     httpRequest({
-      method: 'POST',
-      endpoint: 'wallet/create-new',
+      method: "POST",
+      endpoint: "wallet/create-new",
       data: {
         name: newWalletName,
         cdi: parseInt(selectedCDI),
-        value: newWalletValue
+        value: newWalletValue,
       },
-    }).then(() => {
-      history.push('/')
-    }).catch(err => console.error({ err }))
-  }
-
-  const createNewWallet = () => {
-    onChange()
-    callRequest()
-  }
+    })
+      .then(() => {
+        history.push("/");
+      })
+      .catch((err) => console.error({ err }));
+  };
 
   return (
     <div className="wallet-name">
@@ -50,7 +48,11 @@ const WalletName = () => {
 
       <div className="wallet-name__top">
         <p className="title">Qual o nome do novo porquinho?</p>
-        <input />
+        <input
+          className="wallet-name__input"
+          value={newWalletName}
+          onChange={onChange}
+        />
       </div>
 
       <footer className="g-bottom-button">

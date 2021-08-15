@@ -7,9 +7,11 @@ import {
 } from "@ionic/react";
 import { close, helpCircleOutline } from "ionicons/icons";
 
+import formatCurrency from "./../../../helpers/formatCurrency";
+
 import "./styles.scss";
 
-const HomeTop = () => {
+const HomeTop = ({ totalValue }) => {
   return (
     <div className="home__top">
       <IonHeader className="home__top-header ion-no-border">
@@ -26,7 +28,7 @@ const HomeTop = () => {
         </IonToolbar>
 
         <div className="home__top-value ion-text-center ion-padding-vertical">
-          <p>R$ 9.213,04</p>
+          <p>{formatCurrency(totalValue)}</p>
         </div>
       </IonHeader>
     </div>
