@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { IonContent, IonPage } from "@ionic/react";
+import { useState } from "react";
+import { IonContent, IonPage, useIonViewDidEnter } from "@ionic/react";
 
 import httpRequest from "./../services/http-request";
 
@@ -11,9 +11,9 @@ const Home = () => {
   const [wallets, setWallets] = useState([]);
   const [walletsTotalValue, setWalletsTotalValue] = useState(0);
 
-  useEffect(() => {
+  useIonViewDidEnter(() => {
     getWallets();
-  }, []);
+  });
 
   const getWallets = () => {
     httpRequest({
