@@ -19,8 +19,6 @@ As requisições feitas por esse projeto chamam o serviço criado pelo projeto: 
 
 Para ver o app funcionando por completo baixe esse projeto também!
 
----
-
-### Objetivo
+## Objetivo
 
 Projeto desenvolvido como trabalho do módulo de microsserviços do MBA de Engenharia de Software da FIAP.
