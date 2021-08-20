@@ -16,7 +16,7 @@ Após isso você poderá acessar o app pelo endereço:
 
 ## Dependências
 
-As requisições feitas por esse projeto chamam o serviço criado pelo projeto: [https://github.com/evelew/fiap-nubank-proxy](https://github.com/evelew/fiap-nubank-proxy).
+As requisições desse app chamam o serviço criado pelo projeto: [https://github.com/evelew/fiap-nubank-proxy](https://github.com/evelew/fiap-nubank-proxy).
 
 Para ver o app funcionando por completo baixe esse projeto também!
 
