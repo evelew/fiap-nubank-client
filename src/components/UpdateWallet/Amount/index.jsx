@@ -2,6 +2,7 @@ import { useEffect, useContext } from "react";
 import { IonIcon } from "@ionic/react";
 import { walletOutline } from "ionicons/icons";
 import { Link } from "react-router-dom";
+import CurrencyInput from "react-currency-input";
 
 import UpdateWalletContext from "./../../../context/update-wallet";
 
@@ -29,10 +30,12 @@ const WalletValue = () => {
 
       <div className="update-wallet__amount-top">
         <p className="title">Qual valor você quer guardar?</p>
-        <input
+        <CurrencyInput
           className="update-wallet__amount-input"
+          decimalSeparator=","
+          thousandSeparator="."
           value={amount}
-          onChange={onChange}
+          onChangeEvent={onChange}
         />
       </div>
 

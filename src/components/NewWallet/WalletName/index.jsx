@@ -5,6 +5,7 @@ import { walletOutline } from "ionicons/icons";
 
 import CreateWalletContext from "./../../../context/create-wallet";
 import httpRequest from "../../../services/http-request";
+import formatValue from "../../../helpers/formatValue";
 
 import Header from "../../Header";
 
@@ -41,7 +42,7 @@ const WalletName = () => {
       data: {
         name: newWalletName,
         cdi: selectedCDI,
-        value: newWalletValue,
+        value: formatValue(newWalletValue),
       },
     })
       .then(() => {

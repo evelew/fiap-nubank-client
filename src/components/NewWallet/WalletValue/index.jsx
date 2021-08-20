@@ -4,6 +4,7 @@ import { walletOutline } from "ionicons/icons";
 import { Link } from "react-router-dom";
 
 import CreateWalletContext from "./../../../context/create-wallet";
+import CurrencyInput from "react-currency-input";
 
 import Header from "../../Header";
 
@@ -29,10 +30,12 @@ const WalletValue = () => {
 
       <div className="wallet-value__top">
         <p className="title">Qual o valor que quer guardar?</p>
-        <input
+        <CurrencyInput
           className="wallet-value__input"
+          decimalSeparator=","
+          thousandSeparator="."
           value={newWalletValue}
-          onChange={onChange}
+          onChangeEvent={onChange}
         />
       </div>
 

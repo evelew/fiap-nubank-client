@@ -15,6 +15,7 @@ import { useHistory } from "react-router";
 import UpdateWalletContext from "./../../../context/update-wallet";
 
 import httpRequest from "../../../services/http-request";
+import formatValue from "../../../helpers/formatValue";
 
 import Header from "./../../Header";
 
@@ -56,7 +57,7 @@ const Wallet = () => {
       endpoint: "wallet/update",
       data: {
         _id: wallet,
-        value: amount,
+        value: formatValue(amount),
       },
     })
       .then(() => {
