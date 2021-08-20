@@ -1,3 +1,4 @@
+## Stack
 Projeto desenvolvido com Ionic + React.
 
 ## Como rodar o projeto
